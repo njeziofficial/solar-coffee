@@ -1,0 +1,12 @@
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\SolarCoffee.Services.deps.json
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\SolarCoffee.Services.dll
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\ref\SolarCoffee.Services.dll
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\SolarCoffee.Services.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.csprojAssemblyReference.cache
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.AssemblyInfoInputs.cache
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.AssemblyInfo.cs
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.csproj.CoreCompileInputs.cache
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.dll
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\ref\SolarCoffee.Services.dll
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.pdb

@@ -1,0 +1,17 @@
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\testhost.exe
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\testhost.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\SolarCoffee.Test.deps.json
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\SolarCoffee.Test.runtimeconfig.json
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\SolarCoffee.Test.runtimeconfig.dev.json
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\SolarCoffee.Test.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\bin\Debug\netcoreapp2.1\SolarCoffee.Test.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.csprojAssemblyReference.cache
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.AssemblyInfoInputs.cache
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.AssemblyInfo.cs
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.csproj.CoreCompileInputs.cache
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.dll
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Test\obj\Debug\netcoreapp2.1\SolarCoffee.Test.genruntimeconfig.cache
