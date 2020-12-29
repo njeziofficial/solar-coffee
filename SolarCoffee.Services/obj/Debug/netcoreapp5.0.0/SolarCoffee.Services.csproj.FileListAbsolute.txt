@@ -10,3 +10,6 @@ C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCof
 C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.dll
 C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\ref\SolarCoffee.Services.dll
 C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\SolarCoffee.Data.dll
+C:\Projects\Solar Coffee\SolarCoffee.Services\bin\Debug\netcoreapp5.0.0\SolarCoffee.Data.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Services\obj\Debug\netcoreapp5.0.0\SolarCoffee.Services.csproj.CopyComplete

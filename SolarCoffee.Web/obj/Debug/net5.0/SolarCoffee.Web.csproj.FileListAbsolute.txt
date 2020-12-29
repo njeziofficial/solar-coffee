@@ -50,3 +50,5 @@ C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\Npgsql.dll
 C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\SolarCoffee.Data.dll
 C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\SolarCoffee.Data.pdb
+C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\SolarCoffee.Services.dll
+C:\Projects\Solar Coffee\SolarCoffee.Web\bin\Debug\net5.0\SolarCoffee.Services.pdb

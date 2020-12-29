@@ -9,7 +9,7 @@ namespace SolarCoffee.Services.Abstract
 {
    public interface IProductService
     {
-        List<Product> GetAllProducts();
+        Tuple<List<Product>, int> GetAllProducts(PagingParameterModel paging);
         Product GetProductById(int id);
         ServiceResponse<Product> CreatedProduct(Product product);
         ServiceResponse<Product> ArchiveProduct(int id);

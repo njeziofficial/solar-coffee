@@ -1,6 +1,7 @@
 ﻿using SolarCoffee.Data;
 using SolarCoffee.Data.Models;
 using SolarCoffee.Services.Abstract;
+using SolarCoffee.Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,9 +108,21 @@ namespace SolarCoffee.Services.Concrete
         /// Retreives all Products from the Database.
         /// </summary>
         /// <returns></returns>
-        public List<Product> GetAllProducts()
+        public Tuple<List<Product>,int> GetAllProducts(PagingParameterModel paging)
         {
-            return _db.Products.ToList();
+            var pageSort = paging.pageSize * paging.pageNumber - paging.pageSize;
+            var products = _db.Products
+                .ToList();
+            var paginatedProducts = products
+                .OrderByDescending(p=> p.CreatedOn)
+                .Skip(pageSort)
+                .Take(paging.pageSize)
+                .ToList();
+
+            var count = products.Count();
+
+            return Tuple.Create(paginatedProducts, count);
+
         }
 
         /// <summary>
