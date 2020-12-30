@@ -16,21 +16,21 @@ namespace SolarCoffee.Web.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
-        private readonly IProductService _productService;
+        private readonly ILogger<ProductController> logger;
+        private readonly IProductService productService;
         
         public ProductController(ILogger<ProductController>logger, IProductService productService)
         {
-            _logger = logger;
-            _productService = productService;
+            this.logger = logger;
+            this.productService = productService;
         }
 
         //[Authorize]
         [HttpPost("/api/products")]
         public IActionResult GetProduct(PagingParameterModel paging)
         {
-            _logger.LogInformation("Getting all product");
-           var products = _productService.GetAllProducts(paging);
+            logger.LogInformation("Getting all product");
+           var products = productService.GetAllProducts(paging);
           //var  products.Item1.Select(product => ProductMapper.SerializeProductModel(product));
             IQueryable<Product> source = products.Item1.AsQueryable();
             int count = products.Item2;
@@ -50,10 +50,17 @@ namespace SolarCoffee.Web.Controllers
                 previousPage,
                 nextPage
             };
-
             // Setting Header  
             HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
             return Ok(Tuple.Create(item1: items, item2: products.Item2));
+        }
+
+        [HttpPatch("/api/products/{id}")]
+        public IActionResult ArchiveProduct(int id)
+        {
+            logger.LogInformation("Archiving product");
+           var response = productService.ArchiveProduct(id);
+            return Ok(response);
         }
     }
 }

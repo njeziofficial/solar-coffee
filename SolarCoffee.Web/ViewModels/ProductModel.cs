@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SolarCoffee.Web.ViewModels
 {
-    public class ProductViewModel
+    public class ProductModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }

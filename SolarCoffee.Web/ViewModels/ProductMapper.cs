@@ -8,9 +8,9 @@ namespace SolarCoffee.Web.ViewModels
 {
     public class ProductMapper
     {
-        public static ProductViewModel SerializeProductModel(Product product)
+        public static ProductModel SerializeProductModel(Product product)
         {
-            return new ProductViewModel
+            return new ProductModel
             {
                 Id = product.Id,
                 CreatedOn = product.CreatedOn,
@@ -23,7 +23,7 @@ namespace SolarCoffee.Web.ViewModels
             };
         }
 
-        public static Product SerializeProductModel(ProductViewModel product)
+        public static Product SerializeProductModel(ProductModel product)
         {
             return new Product
             {
