@@ -10,7 +10,7 @@ namespace SolarCoffee.Web.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        DateTime now = DateTime.UtcNow;
+        readonly DateTime now = DateTime.UtcNow;
         private readonly ILogger<CustomerController> logger;
         private readonly ICustomerService customerService;
 
@@ -38,6 +38,7 @@ namespace SolarCoffee.Web.Controllers
             var customers = customerService.GetAllCustomers();
             var customerModel = customers.Select(c => new CustomerModel
             {
+                Id = c.Id,
                 FirstName = c.FirstName,
                 LastName = c.LastName,
                 PrimaryAddress = CustomerMapper
@@ -48,6 +49,14 @@ namespace SolarCoffee.Web.Controllers
                 .OrderByDescending(c => c.CreatedOn)
                 .ToList();
             return Ok(customerModel);
+        }
+
+        [HttpDelete("/api/customer/{id}")]
+        public IActionResult DeleteCustomer(int id)
+        {
+            logger.LogInformation("Deleting a customer");
+            var response = customerService.DeleteCustomer(id);
+            return Ok(response);
         }
     }
 }
