@@ -9,7 +9,7 @@ namespace SolarCoffee.Services.Abstract
 {
    public interface ICustomerService
     {
-        List<Customer> GetAllCustomers();
+        Tuple<List<Customer>, int> GetAllCustomers(PagingParameterModel paging);
         ServiceResponse<Customer> CreateCustomer(Customer customer);
         ServiceResponse<bool> DeleteCustomer(int id);
         Tuple<Customer,string> GetById(int id);

@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using SolarCoffee.Data.Models;
+using SolarCoffee.Services;
 using SolarCoffee.Services.Abstract;
 using SolarCoffee.Web.ViewModels;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SolarCoffee.Web.Controllers
 {
@@ -31,12 +35,23 @@ namespace SolarCoffee.Web.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/api/customer")]
-        public IActionResult GetCustomers()
+        [HttpPost("/api/customers")]
+        public async Task<IActionResult> GetCustomers(PagingParameterModel paging)
         {
             logger.LogInformation("Getting customers");
-            var customers = customerService.GetAllCustomers();
-            var customerModel = customers.Select(c => new CustomerModel
+            var customers = customerService.GetAllCustomers(paging);
+            IQueryable<Customer> source = customers.Item1.AsQueryable();
+            int count = customers.Item2;
+            int CurrentPage = paging.pageNumber;
+            int PageSize = paging.pageSize;
+            int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
+            var items = source.Select(CustomerMapper.SerializeCustomer)
+                .ToList()
+                .OrderBy(p => p.Id);
+            var previousPage = CurrentPage > 1 ? "Yes" : "No";
+            var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
+
+            var customerModel = source.Select(c => new CustomerModel
             {
                 Id = c.Id,
                 FirstName = c.FirstName,
@@ -48,7 +63,18 @@ namespace SolarCoffee.Web.Controllers
             })
                 .OrderByDescending(c => c.CreatedOn)
                 .ToList();
-            return Ok(customerModel);
+            var paginationMetadata = new
+            {
+                totalCount = count,
+                pageSize = PageSize,
+                currentPage = CurrentPage,
+                totalPages = TotalPages,
+                previousPage,
+                nextPage
+            };
+            // Setting Header  
+            HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
+            return Ok(Tuple.Create(item1: items, item2: count));
         }
 
         [HttpDelete("/api/customer/{id}")]

@@ -27,7 +27,7 @@ namespace SolarCoffee.Web.Controllers
 
         //[Authorize]
         [HttpPost("/api/products")]
-        public IActionResult GetProduct(PagingParameterModel paging)
+        public async Task<IActionResult> GetProduct(PagingParameterModel paging)
         {
             logger.LogInformation("Getting all product");
            var products = productService.GetAllProducts(paging);
@@ -37,7 +37,9 @@ namespace SolarCoffee.Web.Controllers
             int CurrentPage = paging.pageNumber;
             int PageSize = paging.pageSize;
             int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
-            var items = source.Select(ProductMapper.SerializeProductModel).ToList();
+            var items = source.Select(ProductMapper.SerializeProductModel)
+                .ToList()
+                .OrderBy(p=> p.Id);
             var previousPage = CurrentPage > 1 ? "Yes" : "No";
             var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
 

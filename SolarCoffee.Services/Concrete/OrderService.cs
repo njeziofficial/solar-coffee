@@ -19,7 +19,8 @@ namespace SolarCoffee.Services.Concrete
         private readonly IProductService productService;
         private readonly IInventoryService inventoryService;
 
-        public OrderService(SolarDbContext db, ILogger<OrderService> logger, IProductService productService, IInventoryService inventoryService)
+        public OrderService(SolarDbContext db, ILogger<OrderService> logger, 
+            IProductService productService, IInventoryService inventoryService)
         {
             this.db = db;
             this.logger = logger;

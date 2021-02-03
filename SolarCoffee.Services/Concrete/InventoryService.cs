@@ -44,7 +44,7 @@ namespace SolarCoffee.Services.Concrete
             var earliest = DateTime.UtcNow - TimeSpan.FromHours(6);
             return db.ProductInventorySnapshots
                 .Include(p => p.Product)
-                .Where(p => p.SnapshotTime == earliest
+                .Where(p => p.SnapshotTime > earliest
                 && !p.Product.IsArchived)
                 .ToList();
                 

@@ -138,12 +138,18 @@ namespace SolarCoffee.Services.Concrete
         /// Returns a list of Customers from the Database
         /// </summary>
         /// <returns>List<Customer></Csutomer></returns>
-        public List<Customer> GetAllCustomers()
+        public Tuple<List<Customer>, int> GetAllCustomers(PagingParameterModel paging)
         {
-            return db.Customers
+            var pageSort = paging.pageSize * paging.pageNumber - paging.pageSize;
+            var customers = db.Customers
                 .Include(customer => customer.PrimaryAddress)
-                .OrderBy(customer => customer.LastName)
+                .OrderBy(customer => customer.LastName)                
                 .ToList();
+            var count = customers.Count;
+           var paginatedCustomers = customers.Skip(pageSort)
+                .Take(paging.pageSize)
+                .ToList();
+            return Tuple.Create(paginatedCustomers, count);
         }
     }
 }
